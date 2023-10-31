@@ -5,8 +5,8 @@
 
 #define DEFAULT 0
 #define CURSOR  1
-#define SYMBOLS 2
-#define NUMBERS 3
+#define SYMBOL  2
+#define NUMBER  3
 
 / {
     keymap {
@@ -97,8 +97,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <CURSOR SYMBOLS>;
-            then-layer = <NUMBERS>;
+            if-layers = <CURSOR SYMBOL>;
+            then-layer = <NUMBER>;
         };
     };
 
