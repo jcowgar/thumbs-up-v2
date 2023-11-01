@@ -22,6 +22,8 @@
 
 #define LT_CURSPC &lt CURSOR SPACE
 #define LT_SYMRET &lt SYMBOL RET
+#define MT_BKSSFT &mt LSHIFT BSPC
+#define MT_DELSFT &mt RSHIFT DEL
 
 / {
     keymap {
@@ -42,7 +44,7 @@
                 &kp TAB    &kp Q      &kp W      &kp F      &kp P      &kp B      &kp J      &kp L      &kp U      &kp Y     &kp SQT    &kp BSPC
                 &kp ESC    &kp A      &kp R      &kp S      &kp T      &kp G      &kp M      &kp N      &kp E      &kp I     &kp O      &kp RET
                 &kp LGUI   &kp Z      &kp X      &kp C      &kp D      &kp V      &kp K      &kp H      &kp COMMA  &kp DOT   &kp FSLH   &kp LGUI
-                                      &kp LALT   &kp LCTRL  &kp LSHIFT LT_CURSPC  LT_SYMRET  &kp RSHIFT &kp RCTRL  &kp LALT
+                                      &kp LALT   &kp LCTRL  MT_BKSSFT  LT_CURSPC  LT_SYMRET  MT_DELSFT  &kp RCTRL  &kp LALT
             >;
         };
 
