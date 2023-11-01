@@ -55,10 +55,10 @@
         //               +------+------+------+------++------+------+------+------+
         cursor_layer {
             bindings = <
-                &trans &trans   &trans   &trans    &trans     &trans             &kp PG_UP  &kp HOME   &kp UP    &kp END   &trans &trans
-                &trans &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &trans             &kp PG_DN  &kp LEFT   &kp DOWN  &kp RIGHT &trans &trans
-                &trans &trans   &trans   &trans    &trans     &trans             &trans     &trans     &trans    &trans    &trans &trans
-                                         &trans &trans &trans &trans             &trans &trans &trans &trans
+                &trans &trans   &trans   &trans    &trans     &trans    &kp PG_UP  &kp HOME        &kp UP    &kp END   &trans &kp DEL
+                &trans &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &trans    &kp PG_DN  &kp LEFT        &kp DOWN  &kp RIGHT &trans &trans
+                &trans &trans   &trans   &trans    &trans     &trans    &trans     &kp LS(LC(A))   &trans    &trans    &trans &trans
+                                         &trans &trans &trans &trans    &kp LC(D)  &skip_sel_macro &trans    &trans
            >;
         };
 
@@ -110,6 +110,16 @@
       COMBO(tab_hcomma, &kp TAB, 31 32, 0, COMBO_TERM_NORMAL)
     };
 
+    macros {
+      skip_sel_macro: skip_sel_macro {
+        label = "skip_sel_sublime";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+        = <&macro_tap &kp LC(K) &kp LC(D)>
+        ;
+      };
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
