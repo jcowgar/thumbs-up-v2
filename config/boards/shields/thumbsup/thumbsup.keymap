@@ -20,6 +20,9 @@
 #define COMBO_TERM_NORMAL 20
 #define COMBO_TERM_SLOW 45
 
+#define LT_CURSPC &lt CURSOR SPACE
+#define LT_SYMRET &lt SYMBOL RET
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -36,23 +39,23 @@
         //               +------+------+------+------++------+------+------+------+
         colemak_layer {
             bindings = <
-                &kp TAB    &kp Q    &kp W    &kp F     &kp P      &kp B            &kp J            &kp L            &kp U      &kp Y     &kp SQT  &kp BSPC
-                &kp ESC    &kp A    &kp R    &kp S     &kp T      &kp G            &kp M            &kp N            &kp E      &kp I     &kp O    &kp RET
-                &kp LGUI   &kp Z    &kp X    &kp C     &kp D      &kp V            &kp K            &kp H            &kp COMMA  &kp DOT   &kp FSLH &kp LGUI
-                            &kp LALT &kp LCTRL  &kp LSHIFT &lt CURSOR SPACE        &lt SYMBOL RET   &kp RSHIFT       &kp RCTRL  &kp LALT
+                &kp TAB    &kp Q      &kp W      &kp F      &kp P      &kp B      &kp J      &kp L      &kp U      &kp Y     &kp SQT    &kp BSPC
+                &kp ESC    &kp A      &kp R      &kp S      &kp T      &kp G      &kp M      &kp N      &kp E      &kp I     &kp O      &kp RET
+                &kp LGUI   &kp Z      &kp X      &kp C      &kp D      &kp V      &kp K      &kp H      &kp COMMA  &kp DOT   &kp FSLH   &kp LGUI
+                                      &kp LALT   &kp LCTRL  &kp LSHIFT LT_CURSPC  LT_SYMRET  &kp RSHIFT &kp RCTRL  &kp LALT
             >;
         };
 
         // Cursor Control on the right (Right Space)
-        // +-----------------------------------------++-----------------------------------------+
-        // |      |Break |WheelD|MousUp|WheelU| PgUp || PgUp | Home |  Up  | End  |   `  | Del  |
-        // +-----------------------------------------++-----------------------------------------+
-        // |      |SelAll|MousLt|MousDn|MousRt| PgDn || PgDn | Left | Down |Right | ...  |      |
-        // +-----------------------------------------++-----------------------------------------+
-        // |      | Undo | Cut  | Copy | Paste| Del  ||  Ins |MsBtLe|MsBtMi|MsBtRt| ...  |      |
-        // +------+------+------+------+------+------++------+------+------+------+------+------+
-        //               |      |      |      |      ||   X  |      |      |      |
-        //               +------+------+------+------++------+------+------+------+
+        //     +-----------------------------------------++-----------------------------------------+
+        //     |      |      |      |      |      |      || PgUp | Home |  Up  | End  |      | Del  |
+        //     +-----------------------------------------++-----------------------------------------+
+        //     |      | Win  | Alt  | Ctrl | Sft  |      || PgDn | Left | Down |Right |      |      |
+        //     +-----------------------------------------++-----------------------------------------+
+        //     |      |      |      |      |      |      ||      | Expnd|      |      |      |      |
+        //     +------+------+------+------+------+------++------+------+------+------+------+------+
+        //                   |      |      |      | XXXX || SelW | SkpW |      |      |
+        //                   +------+------+------+------++------+------+------+------+
         cursor_layer {
             bindings = <
                 &trans &trans   &trans   &trans    &trans     &trans    &kp PG_UP  &kp HOME        &kp UP    &kp END   &trans &kp DEL
@@ -65,20 +68,20 @@
         // Numbers on the home row, FNs on the top row, symbols in the second row
         // (Lower or Raise)
         // +-----------------------------------------++-----------------------------------------+
-        // |      |   1  |   2  |   3  |   4  |   5  ||   6  |   7  |   8  |   9  |   0  | Del  |
+        // |      | !    | @    | <    | >    | \    || ;    | &    | |    | $    | ^    | Del  |
         // +-----------------------------------------++-----------------------------------------+
-        // |      |   F1 |   F2 |   F3 |   F4 |   F5 ||   F6 |   F7 |   F8 |   F9 |   F10|      |
+        // |      | [    | ]    | {    | }    | =    || #    | (    | )    | ~    | `    |      |
         // +-----------------------------------------++-----------------------------------------+
-        // |      |  F11 |  F12 | LAlt |  xxx | xxx  || xxx  |  xxx |   ,  |   .  |   /  |      |
+        // |      | /    | *    | +    | -    | :    || %    | _    |   ,  |   .  |   /  |      |
         // +-----------------------------------------++-----------------------------------------+
-        //               |      |      |      |      ||      |      |      |      |
+        //               |      |      |      |      || XXXX |      |      |      |
         //               +------+------+------+------++------+------+------+------+
         symbols_layer {
             bindings = <
-                &trans       &kp N1   &kp N2     &kp N3   &kp N4     &kp N5         &kp N6 &kp N7     &kp N8     &kp N9    &kp N0    &kp DEL
-                &trans       &kp F1   &kp F2     &kp F3   &kp F4     &kp F5         &kp F6 &kp F7     &kp F8     &kp F9    &kp F10   &kp RET
-                &trans       &kp F11  &kp F12    &none    &none      &none          &none  &none      &kp COMMA  &kp DOT   &kp FSLH  &kp RCTRL
-                                             &kp LGUI   &kp LALT &kp LSHIFT &none          &none  &kp RSHIFT &kp RALT   &kp K_APP
+                &trans &kp EXCL &kp AT   &kp LT   &kp GT    &kp BSLH     &kp SEMI  &kp AMPS   &kp PIPE   &kp DLLR  &kp CARET &kp DEL
+                &trans &kp LBKT &kp RBKT &kp LBRC &kp RBRC  &kp EQUAL    &kp HASH  &kp LPAR   &kp RPAR   &kp TILDE &kp GRAVE &trans
+                &trans &kp FSLS &kp STAR &kp PLUS &kp MINUS &kp COLON    &kp PRCNT &kp UNDER  &kp COMMA  &kp DOT   &kp QMARK &trans
+                                &trans   &trans   &trans    &trans       &trans    &trans     &trans     &trans
             >;
         };
 
