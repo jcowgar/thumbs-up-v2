@@ -58,10 +58,10 @@
         //                   +------+------+------+------++------+------+------+------+
         cursor_layer {
             bindings = <
-                &trans &trans   &trans   &trans    &trans     &trans    &kp PG_UP  &kp HOME        &kp UP    &kp END   &trans &kp DEL
-                &trans &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &trans    &kp PG_DN  &kp LEFT        &kp DOWN  &kp RIGHT &trans &trans
-                &trans &trans   &trans   &trans    &trans     &trans    &trans     &kp LS(LC(A))   &trans    &trans    &trans &trans
-                                         &trans &trans &trans &trans    &kp LC(D)  &skip_sel_macro &trans    &trans
+                &trans     &trans     &trans     &trans     &trans     &trans     &kp PG_UP  &kp HOME   &kp UP     &kp END   &trans     &kp DEL
+                &trans     &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHIFT &trans     &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT &trans     &trans
+                &trans     &trans     &trans     &trans     &trans     &trans     &trans     &kp LS(LC(A)) &trans  &trans    &trans     &trans
+                                      &trans     &trans     &trans     &trans     &kp LC(D)  &skip_sel_macro &trans &trans
            >;
         };
 
@@ -78,10 +78,10 @@
         //               +------+------+------+------++------+------+------+------+
         symbols_layer {
             bindings = <
-                &trans &kp EXCL &kp AT   &kp LT   &kp GT    &kp BSLH     &kp SEMI  &kp AMPS   &kp PIPE   &kp DLLR  &kp CARET &kp DEL
-                &trans &kp LBKT &kp RBKT &kp LBRC &kp RBRC  &kp EQUAL    &kp HASH  &kp LPAR   &kp RPAR   &kp TILDE &kp GRAVE &trans
-                &trans &kp FSLS &kp STAR &kp PLUS &kp MINUS &kp COLON    &kp PRCNT &kp UNDER  &kp COMMA  &kp DOT   &kp QMARK &trans
-                                &trans   &trans   &trans    &trans       &trans    &trans     &trans     &trans
+                &trans     &kp EXCL   &kp AT     &kp LT     &kp GT     &kp BSLH   &kp SEMI   &kp AMPS   &kp PIPE   &kp DLLR  &kp CARET  &kp DEL
+                &trans     &kp LBKT   &kp RBKT   &kp LBRC   &kp RBRC   &kp EQUAL  &kp HASH   &kp LPAR   &kp RPAR   &kp TILDE &kp GRAVE  &trans
+                &trans     &kp FSLH   &kp STAR   &kp PLUS   &kp MINUS  &kp COLON  &kp PRCNT  &kp UNDER  &kp COMMA  &kp DOT   &kp QMARK  &trans
+                                      &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
             >;
         };
 
@@ -98,10 +98,10 @@
         //               +------+------+------+------++------+------+------+------+
         numbers_layer {
             bindings = <
-                &trans &kp F1   &kp F2     &kp F3   &kp F4     &kp F5         &kp F6 &kp F7     &kp F8     &kp F9    &kp F10 &trans
-                &trans &kp N1   &kp N2     &kp N3   &kp N4     &kp N5         &kp N6 &kp N7     &kp N8     &kp N9    &kp N0  &kp F11
-                &trans &kp FSLH &kp STAR   &kp PLUS &kp MINUS  &trans         &trans &kp UNDER  &trans     &trans    &trans  &kp F12
-                                             &trans &trans &trans &trans      &trans &trans &trans &trans
+                &trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp F7     &kp F8     &kp F9    &kp F10    &trans
+                &trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6     &kp N7     &kp N8     &kp N9    &kp N0     &kp F11
+                &trans     &kp FSLH   &kp STAR   &kp PLUS   &kp MINUS  &trans     &trans     &kp UNDER  &trans     &trans    &trans     &kp F12
+                                      &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
             >;
         };
     };
